@@ -1,0 +1,130 @@
+@import './src/app/scss/mixin';
+
+.team {
+  position: relative;
+  padding: 40px 20px;
+  background: #988281 url('/assets/team.jpg') center bottom no-repeat;
+  background-size: cover;
+
+  @include breakpoint('medium') {
+    padding: 110px 40px 100px;
+    min-height: 100vh;
+  }
+
+  &__title {
+    position: relative;
+    font-family: var(--main-font);
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include breakpoint('medium') {
+      font-size: 36px;
+      letter-spacing: 20px;
+    }
+  }
+
+  &__description {
+    position: relative;
+    padding: 20px 20px 0;
+    font-family: var(--main-font);
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #fff;
+
+    strong {
+      font-weight: 600;
+    }
+
+    @include breakpoint('medium') {
+      font-size: 15px;
+      line-height: 20px;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+  }
+
+  &__list {
+    position: relative;
+    padding: 40px 0 60px;
+
+    @include breakpoint('medium') {
+      padding: 70px 0;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    &__box {
+      @include breakpoint('medium') {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "data image";
+        grid-column-gap: 50px;
+      }
+
+      &__image {
+        @include breakpoint('medium') {
+          grid-area: image;
+        }
+
+        &__wrapper {
+          background: #000;
+          height: 200px;
+        }
+
+        &__actions {
+          display: none;
+
+          @include breakpoint('medium') {
+            display: block;
+            height: 20px;
+            background: #6a5759;
+          }
+        }
+      }
+
+      &__data {
+        padding: 25px 0 0;
+
+        @include breakpoint('medium') {
+          grid-area: data;
+          padding: 15px 0 0;
+        }
+
+        h3 {
+          font-family: var(--main-font);
+          font-size: 13px;
+          line-height: 21px;
+          color: #fff;
+          font-style: italic;
+
+          @include breakpoint('medium') {
+            font-size: 15px;
+          }
+
+          strong {
+            font-weight: 600;
+          }
+        }
+
+        p {
+          padding: 25px 0 0;
+          font-family: var(--main-font);
+          font-size: 10px;
+          line-height: 14px;
+          color: #fff;
+        }
+
+        span {
+          padding: 10px 0 0;
+          display: inline-block;
+          font-family: var(--main-font);
+          font-size: 10px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

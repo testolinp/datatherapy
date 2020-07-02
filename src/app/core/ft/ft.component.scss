@@ -1,0 +1,79 @@
+@import './src/app/scss/mixin';
+
+.ft {
+  background: #cadce5 url('/assets/contact.png') center bottom no-repeat;
+  background-size: cover;
+
+  &__top {
+    padding: 20px;
+
+    @include breakpoint('medium') {
+      padding: 50px 40px;
+    }
+
+    &__section {
+      padding: 0 0 30px;
+
+      @include breakpoint('medium') {
+        padding: 0 0 40px;
+      }
+
+      &:nth-child(2) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row-gap: 20px;
+
+        @include breakpoint('medium') {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      &:last-child {
+        padding: 0;
+      }
+    }
+
+    &__box {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      h4 {
+        font-family: var(--main-font);
+        font-size: 13px;
+        line-height: 16px;
+        font-weight: 600;
+        color: #3d3559;
+      }
+
+       p {
+        font-family: var(--main-font);
+        font-size: 13px;
+        line-height: 16px;
+        color: #3d3559;
+
+         a {
+          font-family: var(--main-font);
+          font-size: 13px;
+          color: #3d3559;
+         }
+       }
+    }
+  }
+
+  &__bottom {
+    padding: 20px;
+
+    @include breakpoint('medium') {
+      padding:25px 40px;
+      display: flex;
+      align-items: center;
+    } 
+
+    small {
+      font-family: var(--main-font);
+      font-size: 10px;
+      color: #3d3559;
+    }
+  }
+}

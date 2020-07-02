@@ -1,0 +1,114 @@
+@import './src/app/scss/mixin';
+
+.services {
+  position: relative;
+  padding: 40px 20px;
+  background: rgb(28,28,46) url('/assets/services.jpg') center bottom no-repeat;
+  background-size: cover;
+
+  @include breakpoint('medium') {
+    padding: 110px 40px 100px;
+    min-height: 100vh;
+  }
+
+  &__title {
+    position: relative;
+    font-family: var(--main-font);
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include breakpoint('medium') {
+      font-size: 36px;
+      letter-spacing: 20px;
+    }
+  }
+
+  &__description {
+    position: relative;
+    padding: 20px 20px 0;
+    font-family: var(--main-font);
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #fff;
+
+    strong {
+      font-weight: 600;
+    }
+
+    @include breakpoint('medium') {
+      font-size: 15px;
+      line-height: 20px;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+  }
+
+  &__list {
+    padding: 20px 0 0;
+
+    @include breakpoint('medium') {
+      padding: 50px 0 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 50px;
+    }
+
+    &__box {
+      display: none;
+
+      @include breakpoint('medium') {
+        display: block;
+      }
+
+      &:first-child {
+        display: block;
+      }
+
+      &__image {
+        width: 100%;
+        height: 200px;
+        background: #000;
+      }
+
+      &__data {
+        padding: 15px 0;
+
+        h3 {
+          font-family: var(--main-font);
+          font-size: 20px;
+          line-height: 23px;
+          font-weight: 600;
+          color: #fff;
+
+          @include breakpoint('medium') {
+            padding-right: 20px;
+            font-size: 18px;
+            line-height: 21px;
+          }
+
+          @include breakpoint('large') {
+            min-height: 46px;
+            padding-right: 50px;
+            font-size: 20px;
+            line-height: 23px;
+          }
+        }
+
+        p {
+          padding: 20px 0 0;
+          font-family: var(--main-font);
+          font-size: 12px;
+          line-height: 16px;
+          color: #fff;
+
+          strong {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}

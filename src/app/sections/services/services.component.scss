@@ -1,0 +1,45 @@
+@import './src/app/scss/mixin';
+
+.services {
+  padding: 100px 20px 40px;
+
+  @include breakpoint('medium') {
+    padding: 100px 50px 50px;
+  }
+
+  &__back {
+    padding: 0 0 30px;
+
+    a {
+      color: #000;
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: bold;
+
+    @include breakpoint('medium') {
+      text-align: center;
+      font-size: 40px;
+    }
+  }
+
+  &__description {
+    padding: 10px 0 0;
+    font-size: 16px;
+    line-height: 21px;
+
+    @include breakpoint('medium') {
+      max-width: 500px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 23px;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    padding: 40px 0 0;
+  }
+}

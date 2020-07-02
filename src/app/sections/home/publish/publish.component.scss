@@ -1,0 +1,139 @@
+@import './src/app/scss/mixin';
+
+.publish {
+  position: relative;
+  padding: 40px 20px;
+  background: rgb(22,25,31) url('/assets/publish.jpg') center bottom no-repeat;
+  background-size: cover;
+
+  @include breakpoint('medium') {
+    padding: 110px 40px 100px;
+    min-height: 100vh;
+  }
+
+  &__title {
+    position: relative;
+    font-family: var(--main-font);
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+
+    @include breakpoint('medium') {
+      font-size: 36px;
+      letter-spacing: 20px;
+    }
+  }
+
+  &__description {
+    position: relative;
+    padding: 20px 20px 0;
+    font-family: var(--main-font);
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #fff;
+
+    strong {
+      font-weight: 600;
+    }
+
+    @include breakpoint('medium') {
+      font-size: 15px;
+      line-height: 20px;
+      max-width: 550px;
+      margin: 0 auto;
+    }
+  }
+
+  &__list {
+    padding: 20px 0 0;
+
+    @include breakpoint('medium') {
+      padding: 40px 0 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 10px;
+    }
+
+    &__box {
+      display: none;
+      background: rgba(255, 255, 255, .1);
+
+      @include breakpoint('medium') {
+        display: block;
+      }
+
+      @include breakpoint('large') {
+        transition: background .3s ease-in-out;
+      }
+
+      &:hover {
+        @include breakpoint('large') {
+          background: rgba(255, 255, 255, .3);
+        }
+      }
+
+      &:first-child {
+        display: block;
+      }
+
+      &__data {
+        padding: 30px;
+
+        h3 {
+          font-family: var(--main-font);
+          font-size: 20px;
+          line-height: 23px;
+          font-weight: 600;
+          color: #fff;
+        }
+
+        p {
+          padding: 10px 0 0;
+          font-family: var(--main-font);
+          font-size: 12px;
+          line-height: 17px;
+          color: #fff;
+
+          strong {
+            font-weight: bold;
+          }
+        }
+
+        &__btn {
+          padding: 10px 0 0;
+
+          span {
+            display: inline-block;
+            font-family: var(--main-font);
+            font-size: 12px;
+            color: #fff;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 0;
+
+    a {
+      font-family: var(--main-font);
+      font-size: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: underline;
+
+      &:hover {
+        @include breakpoint('large') {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

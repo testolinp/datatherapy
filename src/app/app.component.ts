@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'Datatherapy';
+
+  public onActivate() {
+    window.scroll(0, 0);
+  }
 }

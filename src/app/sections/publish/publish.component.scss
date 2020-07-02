@@ -1,0 +1,119 @@
+@import './src/app/scss/mixin';
+
+.publish {
+  padding: 100px 20px 40px;
+  background: #141b24 url('/assets/publish-bg.jpg') center bottom no-repeat;
+  background-size: cover;
+
+  @include breakpoint('medium') {
+    padding: 100px 40px 120px;
+  }
+
+  &__back {
+    padding: 0 0 30px;
+
+    a {
+      font-family: var(--main-font);
+      font-size: 15px;
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  &__title {
+    font-family: var(--main-font);
+    font-size: 22px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+
+    @include breakpoint('medium') {
+      text-align: center;
+      font-size: 36px;
+    }
+  }
+
+  &__description {
+    padding: 20px 0 0;
+    font-family: var(--main-font);
+    font-size: 16px;
+    line-height: 21px;
+    color: #fff;
+
+    @include breakpoint('medium') {
+      padding-right: 15px;
+      max-width: 500px;
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    padding: 40px 0 0;
+    display: grid;
+    grid-row-gap: 10px;
+
+    @include breakpoint('medium') {
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 10px;
+    }
+
+    // @include breakpoint('large') {
+    //   max-width: 1024px;
+    //   margin: 0 auto;
+    // }
+
+    &__box {
+      padding: 15px;
+      background: rgba(255, 255, 255, .1);
+
+      @include breakpoint('medium') {
+        padding: 25px;
+      }
+
+      &:last-child {
+        padding: 0;
+
+        @include breakpoint('medium') {
+          padding: 25px;
+        }
+      } 
+
+      &__title {
+        font-family: var(--main-font);
+        font-size: 20px;
+        line-height: 23px;
+        font-weight: 600;
+        color: #fff;
+
+        @include breakpoint('medium') {
+          height: 120px;
+        }
+
+        @include breakpoint('large') {
+          height: 80px;
+        }
+      }
+
+      &__description {
+        padding: 10px 0 20px;
+        font-family: var(--main-font);
+        font-size: 12px;
+        line-height: 15px;
+        color: #fff;
+      }
+
+      &__btn {
+        a {
+          font-family: var(--main-font);
+          font-size: 12px;
+          line-height: 15px;
+          color: #fff;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

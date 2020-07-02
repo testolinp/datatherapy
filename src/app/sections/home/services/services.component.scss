@@ -47,25 +47,28 @@
   }
 
   &__list {
-    padding: 20px 0 0;
+    padding: 20px 20px 0;
 
     @include breakpoint('medium') {
       padding: 50px 0 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-column-gap: 50px;
+    }
+    // @include breakpoint('medium') {
+    //   padding: 50px 0 0;
+    //   display: grid;
+    //   grid-template-columns: repeat(3, 1fr);
+    //   grid-column-gap: 50px;
+    // }
+
+    ngx-slick-carousel {
+      @include breakpoint('medium') {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 50px;
+      }
     }
 
     &__box {
-      display: none;
-
-      @include breakpoint('medium') {
-        display: block;
-      }
-
-      &:first-child {
-        display: block;
-      }
+      display: block;
 
       &__image {
         width: 100%;

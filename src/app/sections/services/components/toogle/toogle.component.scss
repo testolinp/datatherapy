@@ -1,33 +1,43 @@
 @import './src/app/scss/mixin';
 
 .toogle-service {
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #fff;
 
   &__header {
     position: relative;
     padding: 10px 0;
+    cursor: pointer;
 
     &:before {
       content: '';
       display: block;
-      width: 20px;
-      height: 20px;
-      background: #000;
+      width: 18px;
+      height: 18px;
+      background: url('/assets/arrow-toogle.png') center center no-repeat;
       position: absolute;
       top: 8px;
       right: 10px;
+      transition: all .3s ease-in-out;
     }
 
     h3 {
-      font-weight: bold;
+      font-family: var(--main-font);
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
     }
   }
 
   &__data {
     display: none;
-    padding: 0 0 20px;
+    padding: 10px 0 20px;
 
     p {
+      font-family: var(--main-font);
+      font-size: 13px;
+      line-height: 17px;
+      color: #fff;
+
       @include breakpoint('medium') {
         max-width: 800px;
       }
@@ -35,6 +45,12 @@
   }
 
   &--show {
+    .toogle-service__header {
+      &:before {
+        transform: rotateZ(90deg);
+      }
+    }
+
     .toogle-service__data {
       display: block;
     }

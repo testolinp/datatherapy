@@ -16,7 +16,7 @@
       font-family: var(--main-font);
       font-size: 15px;
       color: #fff;
-      text-decoration: underline;
+      font-weight: 700;
     }
   }
 
@@ -60,10 +60,10 @@
       grid-column-gap: 10px;
     }
 
-    // @include breakpoint('large') {
-    //   max-width: 1024px;
-    //   margin: 0 auto;
-    // }
+    @include breakpoint('large') {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
 
     &__box {
       padding: 15px;

@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HerospaceComponent } from './sections/home/herospace/herospace.component';
@@ -33,6 +35,7 @@ import { ToogleComponent } from './sections/services/components/toogle/toogle.co
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    SlickCarouselModule,
     CoreModule
   ],
   providers: [],

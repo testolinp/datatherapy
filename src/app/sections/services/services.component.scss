@@ -2,44 +2,61 @@
 
 .services {
   padding: 100px 20px 40px;
+  background: #322e47 url('/assets/services-bg.jpg') center bottom no-repeat;
+  background-size: cover;
 
   @include breakpoint('medium') {
-    padding: 100px 50px 50px;
+    padding: 100px 40px 120px;
   }
 
   &__back {
     padding: 0 0 30px;
 
     a {
-      color: #000;
+      font-family: var(--main-font);
+      font-size: 15px;
+      color: #fff;
+      font-weight: 700;
     }
   }
 
   &__title {
+    font-family: var(--main-font);
     font-size: 22px;
-    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    font-weight: 600;
 
     @include breakpoint('medium') {
       text-align: center;
-      font-size: 40px;
+      font-size: 36px;
     }
   }
 
   &__description {
-    padding: 10px 0 0;
+    padding: 20px 0 0;
+    font-family: var(--main-font);
     font-size: 16px;
     line-height: 21px;
+    color: #fff;
 
     @include breakpoint('medium') {
+      padding-right: 15px;
       max-width: 500px;
       margin: 0 auto;
-      font-size: 18px;
-      line-height: 23px;
+      font-size: 15px;
+      line-height: 20px;
       text-align: center;
     }
   }
 
   &__content {
     padding: 40px 0 0;
+
+    @include breakpoint('large') {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
   }
 }

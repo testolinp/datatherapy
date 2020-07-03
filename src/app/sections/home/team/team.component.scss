@@ -2,7 +2,7 @@
 
 .team {
   position: relative;
-  padding: 40px 20px;
+  padding: 30px 20px 60px;
   background: #988281 url('/assets/team.jpg') center bottom no-repeat;
   background-size: cover;
 
@@ -14,10 +14,11 @@
   &__title {
     position: relative;
     font-family: var(--main-font);
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     text-transform: uppercase;
     color: #fff;
+    letter-spacing: 8px;
 
     @include breakpoint('medium') {
       font-size: 36px;
@@ -27,10 +28,10 @@
 
   &__description {
     position: relative;
-    padding: 20px 20px 0;
+    padding: 20px 10px 0;
     font-family: var(--main-font);
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 13px;
+    line-height: 18px;
     text-align: center;
     color: #fff;
 
@@ -39,6 +40,7 @@
     }
 
     @include breakpoint('medium') {
+      padding: 20px 20px 0;
       font-size: 15px;
       line-height: 20px;
       max-width: 550px;
@@ -48,7 +50,7 @@
 
   &__list {
     position: relative;
-    padding: 40px 0 60px;
+    padding: 40px 30px 0;
 
     @include breakpoint('medium') {
       padding: 70px 0;
@@ -62,6 +64,10 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas: "data image";
         grid-column-gap: 50px;
+      }
+
+      &:focus {
+        outline: 0 none;
       }
 
       &__image {
@@ -86,22 +92,24 @@
       }
 
       &__data {
-        padding: 25px 0 0;
+        padding: 20px 0 0;
+        text-align: center;
 
         @include breakpoint('medium') {
           grid-area: data;
           padding: 15px 0 0;
+          text-align: left;
         }
 
         h3 {
           font-family: var(--main-font);
-          font-size: 13px;
-          line-height: 21px;
+          font-size: 12px;
+          line-height: 16px;
           color: #fff;
-          font-style: italic;
 
           @include breakpoint('medium') {
             font-size: 15px;
+            font-style: italic;
           }
 
           strong {
@@ -110,11 +118,17 @@
         }
 
         p {
-          padding: 25px 0 0;
+          padding: 15px 0 0;
           font-family: var(--main-font);
-          font-size: 10px;
+          font-size: 11px;
           line-height: 14px;
           color: #fff;
+
+          @include breakpoint('medium') {
+            padding: 25px 0 0;
+            font-size: 10px;
+            line-height: 14px;
+          }
         }
 
         span {
@@ -123,6 +137,48 @@
           font-family: var(--main-font);
           font-size: 10px;
           color: #fff;
+        }
+      }
+    }
+  }
+}
+
+:host ::ng-deep {
+  .slick-arrow {
+    top: 100px;
+    height: 25px;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .slick-next {
+    background: url('/assets/arrow-r.png') center center no-repeat;
+    background-size: contain;
+    right: -35px;
+  }
+
+  .slick-prev {
+    background: url('/assets/arrow-l.png') center center no-repeat;
+    background-size: contain;
+    left: -35px;
+  }
+
+  .slick-dots {
+    bottom: -40px;
+
+    li {
+      margin: 0;
+
+      button {
+        padding: 0;
+        width: 15px;
+
+        &:before {
+          width: 15px;
+          color: #fff;
+          font-size: 9px;
         }
       }
     }

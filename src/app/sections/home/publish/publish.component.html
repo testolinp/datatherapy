@@ -2,33 +2,17 @@
   <h2 class="publish__title">Publicaciones</h2>
   <p class="publish__description"><strong>Agregar una reseña</strong> que cuente un poco la filosofía de la compañía o el estilo de trabajo o algun comentario que <strong>resalte su vocación</strong>, etc, como introducción a la sección.</p>
   <div class="publish__list">
-    <a href="#" target="_blank" class="publish__list__box">
-      <div class="publish__list__box__data">
-        <h3>What is the best denominator with which to measure antibiotic consumption?</h3>
-        <p><strong>Authors:</strong> Curcio, D; Fernández, F<br><strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4. <br><strong>Year:</strong> 2006</p>
-        <div class="publish__list__box__data__btn">
-          <span>Ver más</span>
+    <ngx-slick-carousel [config]="publishSlider">
+      <a ngxSlickItem target="_blank" class="publish__list__box" *ngFor="let publish of publishContent">
+        <div class="publish__list__box__data">
+          <h3>{{publish.title}}</h3>
+          <div [innerHTML]="publish.description"></div>
+          <div class="publish__list__box__data__btn">
+            <span>Ver más</span>
+          </div>
         </div>
-      </div>
-    </a>
-    <a href="#" target="_blank" class="publish__list__box">
-      <div class="publish__list__box__data">
-        <h3>What is the best denominator with which to measure antibiotic consumption?</h3>
-        <p><strong>Authors:</strong> Curcio, D; Fernández, F<br><strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4. <br><strong>Year:</strong> 2006</p>
-        <div class="publish__list__box__data__btn">
-          <span>Ver más</span>
-        </div>
-      </div>
-    </a>
-    <a href="#" target="_blank" class="publish__list__box">
-      <div class="publish__list__box__data">
-        <h3>What is the best denominator with which to measure antibiotic consumption?</h3>
-        <p><strong>Authors:</strong> Curcio, D; Fernández, F<br><strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4. <br><strong>Year:</strong> 2006</p>
-        <div class="publish__list__box__data__btn">
-          <span>Ver más</span>
-        </div>
-      </div>
-    </a>
+      </a>
+    </ngx-slick-carousel>
   </div>
   <div class="publish__btn">
     <a routerLink="/publicaciones">Ver todas las publicaciones</a>

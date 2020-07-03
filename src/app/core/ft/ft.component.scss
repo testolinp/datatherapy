@@ -1,17 +1,23 @@
-@import './src/app/scss/mixin';
+@import '../../scss/mixin';
 
 .ft {
-  background: #cadce5 url('/assets/contact.png') center bottom no-repeat;
+  background: #cadce5 url('/assets/ft.jpg') center bottom no-repeat;
   background-size: cover;
 
+  @include breakpoint('medium') {
+    background: #cadce5 url('/assets/contact.png') center bottom no-repeat;
+    background-size: cover;
+  }
+
   &__top {
-    padding: 20px;
+    padding: 30px 20px;
 
     @include breakpoint('medium') {
       padding: 50px 40px;
     }
 
     &__section {
+      position: relative;
       padding: 0 0 30px;
 
       @include breakpoint('medium') {
@@ -20,7 +26,7 @@
 
       &:nth-child(2) {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         grid-row-gap: 20px;
 
         @include breakpoint('medium') {
@@ -28,8 +34,28 @@
         }
       }
 
+      &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 11px;
+        width: 200px;
+        height: 4px;
+        background: url('/assets/sep-ft.png') 0 0 no-repeat;
+        background-size: contain;
+
+        @include breakpoint('medium') {
+          display: none;
+        }
+      }
+
       &:last-child {
         padding: 0;
+
+        &:before {
+          display: none;
+        }
       }
     }
 
@@ -40,22 +66,36 @@
 
       h4 {
         font-family: var(--main-font);
-        font-size: 13px;
-        line-height: 16px;
+        font-size: 11px;
+        line-height: 14px;
         font-weight: 600;
         color: #3d3559;
+
+        @include breakpoint('medium') {
+          font-size: 13px;
+          line-height: 16px;
+        }
       }
 
        p {
         font-family: var(--main-font);
-        font-size: 13px;
-        line-height: 16px;
+        font-size: 11px;
+        line-height: 14px;
         color: #3d3559;
+
+        @include breakpoint('medium') {
+          font-size: 13px;
+          line-height: 16px;
+        }
 
          a {
           font-family: var(--main-font);
-          font-size: 13px;
+          font-size: 11px;
           color: #3d3559;
+
+          @include breakpoint('medium') {
+            font-size: 13px;
+          }
          }
        }
     }
@@ -72,8 +112,12 @@
 
     small {
       font-family: var(--main-font);
-      font-size: 10px;
+      font-size: 9px;
       color: #3d3559;
+
+      @include breakpoint('medium') {
+        font-size: 10px;
+      }
     }
   }
 }

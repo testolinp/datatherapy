@@ -28,7 +28,7 @@ export class ServicesComponent implements OnInit {
   ]
 
   serviceSlider : Object = {
-    dots: false,
+    dots: true,
     infinite: false,
     responsive: [
       {

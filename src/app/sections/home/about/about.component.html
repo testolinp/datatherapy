@@ -1,6 +1,6 @@
 <section class="about">
   <h2 class="about__title">Conocenos</h2>
-  <p class="about__description">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+  <p class="about__description"><strong>Agregar una reseña</strong> que cuente un poco la filosofía de la compañía o el estilo de trabajo o algun comentario que <strong>resalte su vocación</strong>, etc, como introducción a la sección.</p>
   <div class="about__module">
     <div class="about__module__box">
       <div class="about__module__box__image"></div>
@@ -18,33 +18,14 @@
     </div>
   </div>
   <div class="about__types">
-    <div class="about__types__box">
-      <div class="about__types__box__image"></div>
-      <div class="about__types__box__data">
-        <h4>Profesionalismo</h4>
-        <p>Seriedad y transparencia en la aplicación del método científico para el análisis de datos cumpliendo con los tiempos y metas comprometidas.</p>
+    <ngx-slick-carousel [config]="aboutSlider">
+      <div ngxSlickItem class="about__types__box" *ngFor="let about of aboutContent">
+        <div class="about__types__box__image"></div>
+        <div class="about__types__box__data">
+          <h4>{{about.title}}</h4>
+          <p>{{about.description}}</p>
+        </div>
       </div>
-    </div>
-    <div class="about__types__box">
-      <div class="about__types__box__image"></div>
-      <div class="about__types__box__data">
-        <h4>Profesionalismo</h4>
-        <p>Seriedad y transparencia en la aplicación del método científico para el análisis de datos cumpliendo con los tiempos y metas comprometidas.</p>
-      </div>
-    </div>
-    <div class="about__types__box">
-      <div class="about__types__box__image"></div>
-      <div class="about__types__box__data">
-        <h4>Profesionalismo</h4>
-        <p>Seriedad y transparencia en la aplicación del método científico para el análisis de datos cumpliendo con los tiempos y metas comprometidas.</p>
-      </div>
-    </div>
-    <div class="about__types__box">
-      <div class="about__types__box__image"></div>
-      <div class="about__types__box__data">
-        <h4>Profesionalismo</h4>
-        <p>Seriedad y transparencia en la aplicación del método científico para el análisis de datos cumpliendo con los tiempos y metas comprometidas.</p>
-      </div>
-    </div>
+    </ngx-slick-carousel>
   </div>
 </section>

@@ -11,7 +11,7 @@
     @media (min-width: 1280px) { @content; }
   }
 
-  @else if $point == "extra-large" {
+  @else if $point == "extra-large" { 
     @media (min-width: 1440px) { @content; }
   }
 

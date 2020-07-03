@@ -1,23 +1,26 @@
-@import './src/app/scss/mixin';
+@import '../../../scss/mixin';
 
 .publish {
   position: relative;
-  padding: 40px 20px;
-  background: rgb(22,25,31) url('/assets/publish.jpg') center bottom no-repeat;
+  padding: 60px 20px 50px;
+  background: rgb(22,25,31) url('/assets/publish-small.jpg') center bottom no-repeat;
   background-size: cover;
 
   @include breakpoint('medium') {
     padding: 110px 40px 100px;
     min-height: 100vh;
+    background: rgb(22,25,31) url('/assets/publish.jpg') center bottom no-repeat;
+    background-size: cover;
   }
 
   &__title {
     position: relative;
     font-family: var(--main-font);
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
     text-transform: uppercase;
     color: #fff;
+    letter-spacing: 8px;
 
     @include breakpoint('medium') {
       font-size: 36px;
@@ -27,10 +30,10 @@
 
   &__description {
     position: relative;
-    padding: 20px 20px 0;
+    padding: 20px 10px 0;
     font-family: var(--main-font);
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 13px;
+    line-height: 18px;
     text-align: center;
     color: #fff;
 
@@ -39,6 +42,7 @@
     }
 
     @include breakpoint('medium') {
+      padding: 20px 20px 0;
       font-size: 15px;
       line-height: 20px;
       max-width: 550px;
@@ -47,22 +51,23 @@
   }
 
   &__list {
-    padding: 20px 0 0;
+    padding: 30px 30px 0;
 
     @include breakpoint('medium') {
       padding: 40px 0 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-column-gap: 10px;
+    }
+
+    ngx-slick-carousel {
+      @include breakpoint('medium') {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 10px;
+      }
     }
 
     &__box {
-      display: none;
+      display: block;
       background: rgba(255, 255, 255, .1);
-
-      @include breakpoint('medium') {
-        display: block;
-      }
 
       @include breakpoint('large') {
         transition: background .3s ease-in-out;
@@ -74,30 +79,19 @@
         }
       }
 
-      &:first-child {
-        display: block;
-      }
-
       &__data {
         padding: 30px;
 
         h3 {
           font-family: var(--main-font);
-          font-size: 20px;
-          line-height: 23px;
+          font-size: 15px;
+          line-height: 16px;
           font-weight: 600;
           color: #fff;
-        }
 
-        p {
-          padding: 10px 0 0;
-          font-family: var(--main-font);
-          font-size: 12px;
-          line-height: 17px;
-          color: #fff;
-
-          strong {
-            font-weight: bold;
+          @include breakpoint('medium') {
+            font-size: 20px;
+            line-height: 23px;
           }
         }
 
@@ -107,9 +101,13 @@
           span {
             display: inline-block;
             font-family: var(--main-font);
-            font-size: 12px;
+            font-size: 10px;
             color: #fff;
             text-decoration: underline;
+
+            @include breakpoint('medium') {
+              font-size: 12px;
+            }
           }
         }
       }
@@ -123,15 +121,80 @@
 
     a {
       font-family: var(--main-font);
-      font-size: 15px;
+      font-size: 13px;
       font-weight: bold;
       text-transform: uppercase;
       color: #fff;
       text-decoration: underline;
 
+      @include breakpoint('medium') {
+        font-size: 15px;
+      }
+
       &:hover {
         @include breakpoint('large') {
           text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+:host ::ng-deep {
+  .publish__list__box__data {
+    p {
+      padding: 10px 0 0;
+      font-family: var(--main-font);
+      font-size: 10px;
+      line-height: 13px;
+      color: #fff;
+
+      @include breakpoint('medium') {
+        font-size: 12px;
+        line-height: 17px;
+      }
+
+      strong {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .slick-arrow {
+    top: 90px;
+    height: 25px;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  .slick-next {
+    background: url('/assets/arrow-r.png') center center no-repeat;
+    background-size: contain;
+    right: -35px;
+  }
+
+  .slick-prev {
+    background: url('/assets/arrow-l.png') center center no-repeat;
+    background-size: contain;
+    left: -35px;
+  }
+
+  .slick-dots {
+    bottom: -40px;
+
+    li {
+      margin: 0;
+
+      button {
+        padding: 0;
+        width: 15px;
+
+        &:before {
+          width: 15px;
+          color: #fff;
+          font-size: 9px;
         }
       }
     }

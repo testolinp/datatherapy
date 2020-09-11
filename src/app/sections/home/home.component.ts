@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
+import { HomepageService } from '../../homepage.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,11 +10,22 @@ import { Title } from '@angular/platform-browser';
 })
 export class HomeViewComponent implements OnInit {
 
-  constructor( private titleService : Title ) {
+  homepage: any = [];
+
+  constructor( private titleService : Title, protected homepageService: HomepageService ) {
     this.titleService.setTitle("Datatherapy");
   }
 
   ngOnInit() {
+    this.homepageService.getHomepage()
+    .subscribe(
+      (data) => {
+        this.homepage = data[0].acf;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 
 }

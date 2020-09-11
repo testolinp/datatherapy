@@ -1,4 +1,4 @@
-@import '../../scss/mixin';
+@import "../../scss/mixin";
 
 .hd {
   position: fixed;
@@ -9,11 +9,16 @@
   height: 45px;
   display: flex;
   padding: 0 20px;
-  background: rgb(97,89,90);
-  background: linear-gradient(90deg, rgba(97,89,90,1) 0%, rgba(62,56,79,1) 14%, rgba(51,45,75,1) 100%);
+  background: rgb(97, 89, 90);
+  background: linear-gradient(
+    90deg,
+    rgba(97, 89, 90, 1) 0%,
+    rgba(62, 56, 79, 1) 14%,
+    rgba(51, 45, 75, 1) 100%
+  );
   align-items: center;
 
-  @include breakpoint('medium') {
+  @include breakpoint("medium") {
     height: 60px;
     padding: 0 40px;
   }
@@ -22,19 +27,24 @@
     display: block;
     width: 130px;
     height: 20px;
-    background: url('/assets/lg.png') 0 center no-repeat;
-    background-size: contain;;
+    background: url("/assets/lg.png") 0 center no-repeat;
+    background-size: contain;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       width: 170px;
       height: 40px;
+    }
+
+    @include breakpoint("large") {
+      width: 190px;
+      height: 45px;
     }
   }
 
   &__nav {
     display: none;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       display: flex;
       margin-left: auto;
     }
@@ -47,9 +57,10 @@
       font-family: var(--main-font);
       font-size: 14px;
       font-weight: 600;
+      text-transform: uppercase;
 
       &:before {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         top: -2px;
@@ -64,6 +75,24 @@
           display: none;
         }
       }
+
+      a {
+        color: #fff;
+        font-family: var(--main-font);
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: capitalize;
+        opacity: 0.5;
+        transition: all 0.3s ease-in-out;
+
+        &:first-child {
+          margin-right: 5px;
+        }
+
+        &.active {
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -73,16 +102,93 @@
     height: 30px;
     border: 0 none;
     border-radius: 0;
-    background: url('/assets/hamb.png') center center no-repeat;
+    background: url("/assets/hamb.png") center center no-repeat;
     background-size: 30px;
     padding: 0;
+    cursor: pointer;
 
     &:focus {
       outline: 0 none;
     }
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       display: none;
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  background: #faf68d url("/assets/menu.jpg") left bottom no-repeat;
+  background-size: contain;
+  opacity: 0;
+  left: 100vw;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+
+  @include breakpoint("large") {
+    display: none;
+  }
+
+  &--open {
+    left: 0;
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  &__header {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  &__lg {
+    display: block;
+    width: 130px;
+    height: 20px;
+    background: url("/assets/lg-v.png") 0 center no-repeat;
+    background-size: contain;
+  }
+
+  &__close {
+    width: 30px;
+    height: 30px;
+    border: 0 none;
+    border-radius: 0;
+    background: url("/assets/close.png") center center no-repeat;
+    background-size: 15px;
+    padding: 0;
+    position: absolute;
+    top: 8px;
+    right: 20px;
+
+    &:focus {
+      outline: 0 none;
+    }
+
+    @include breakpoint("medium") {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+
+    &__link {
+      margin: 10px 0;
+      font-family: var(--main-font);
+      font-size: 14px;
+      color: #36304e;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
   }
 }

@@ -11,16 +11,25 @@ import { HomeViewComponent } from './sections/home/home.component';
 import { ServicesViewComponent } from './sections/services/services.component';
 import { PublishViewComponent } from './sections/publish/publish.component';
 
-import { CoreModule } from './core/core.module';
+import { LayoutComponent } from './core/layout/layout.component';
+import { HdComponent } from './core/hd/hd.component';
+import { FtComponent } from './core/ft/ft.component';
+
 import { AboutComponent } from './sections/home/about/about.component';
 import { TeamComponent } from './sections/home/team/team.component';
 import { ServicesComponent } from './sections/home/services/services.component';
 import { PublishComponent } from './sections/home/publish/publish.component';
 import { ToogleComponent } from './sections/services/components/toogle/toogle.component';
 
+import { HomepageService } from './homepage.service';
+import { InicioComponent } from './sections/inicio/inicio.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+    LayoutComponent,
+    HdComponent,
+    FtComponent,
     HerospaceComponent,
     HomeViewComponent,
     ServicesViewComponent,
@@ -29,16 +38,16 @@ import { ToogleComponent } from './sections/services/components/toogle/toogle.co
     TeamComponent,
     ServicesComponent,
     PublishComponent,
-    ToogleComponent
+    ToogleComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SlickCarouselModule,
-    CoreModule
+    SlickCarouselModule
   ],
-  providers: [],
+  providers: [HomepageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

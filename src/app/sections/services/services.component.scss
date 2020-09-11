@@ -22,27 +22,28 @@
 
   &__title {
     font-family: var(--main-font);
-    font-size: 22px;
+    font-size: 15px;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 15px;
     font-weight: 600;
+    letter-spacing: 2px;
 
     @include breakpoint('medium') {
+      letter-spacing: 15px;
       text-align: center;
       font-size: 36px;
     }
   }
 
   &__description {
-    padding: 20px 0 0;
+    padding: 25px 0 0;
     font-family: var(--main-font);
-    font-size: 16px;
-    line-height: 21px;
+    font-size: 12px;
+    line-height: 15px;
     color: #fff;
 
     @include breakpoint('medium') {
-      padding-right: 15px;
+      padding: 20px 15px 0 0;
       max-width: 500px;
       margin: 0 auto;
       font-size: 15px;
@@ -52,9 +53,10 @@
   }
 
   &__content {
-    padding: 40px 0 0;
+    padding: 30px 0 0;
 
     @include breakpoint('large') {
+      padding: 40px 0 0;
       max-width: 1024px;
       margin: 0 auto;
     }

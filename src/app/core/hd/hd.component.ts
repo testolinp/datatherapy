@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'hd-component',
-  templateUrl: './hd.component.html',
-  styleUrls: ['./hd.component.scss']
+  selector: "hd-component",
+  templateUrl: "./hd.component.html",
+  styleUrls: ["./hd.component.scss"],
 })
 export class HdComponent implements OnInit {
+  @Input() lang: string;
+  showMenu: boolean = false;
 
-  constructor() { }
-
-  ngOnInit() {
+  closeMenu() {
+    this.showMenu = false;
   }
 
+  constructor() {}
+
+  ngOnInit() {}
 }

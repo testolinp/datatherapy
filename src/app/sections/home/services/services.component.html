@@ -1,13 +1,15 @@
 <section class="services">
-  <h2 class="services__title">Servicios</h2>
-  <p class="services__description">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+  <h2 class="services__title" [innerHTML]="title"></h2>
+  <div class="services__description" [innerHTML]="description"></div>
   <div class="services__list">
     <ngx-slick-carousel [config]="serviceSlider">
-      <a ngxSlickItem *ngFor="let service of serviceContent" routerLink="/servicios/name1" class="services__list__box">
-        <div class="services__list__box__image"></div>
+      <a ngxSlickItem *ngFor="let service of services" routerLink="/servicios/{{service.slug}}" class="services__list__box">
+        <div class="services__list__box__image">
+          <img src="{{service['_embedded']['wp:featuredmedia'][0]['source_url']}}" />
+        </div>
         <div class="services__list__box__data">
-          <h3>{{service.title}}</h3>
-          <p>{{service.description}}</p>
+          <h3 class="services__list__box__data__title">{{service.title.rendered}}</h3>
+          <div class="services__list__box__data__description" [innerHTML]="service.content.rendered"></div>
         </div>
       </a>
     </ngx-slick-carousel>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { HomepageService } from '../../../homepage.service';
 
 @Component({
   selector: 'services-component',
@@ -6,26 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent implements OnInit {
+  @Input() title : string;
+  @Input() description : string;
 
-  constructor() { }
+  services : any = [];
+
+  constructor(protected homepageService : HomepageService) { }
 
   ngOnInit() {
+    this.homepageService.getServices()
+    .subscribe(
+      (data) => {
+        this.services = data;
+      },
+      (error) => {
+        console.error(error);
+      }
+    )
   }
-
-  serviceContent : any = [
-    {
-      title: "Evidencia del mundo real",
-      description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      title: "Revisiones Sistemáticas y Meta-análisis",
-      description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      title: "Servicios de Redacción Médica",
-      description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    }
-  ]
 
   serviceSlider : Object = {
     dots: true,

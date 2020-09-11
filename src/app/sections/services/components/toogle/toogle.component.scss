@@ -5,8 +5,12 @@
 
   &__header {
     position: relative;
-    padding: 10px 0;
+    padding: 12px 0;
     cursor: pointer;
+
+    @include breakpoint('medium') {
+      padding: 10px 0;
+    }
 
     &:before {
       content: '';
@@ -16,31 +20,39 @@
       background: url('/assets/arrow-toogle.png') center center no-repeat;
       position: absolute;
       top: 8px;
-      right: 10px;
+      right: 5px;
       transition: all .3s ease-in-out;
+
+      @include breakpoint('medium') {
+        right: 10px;
+      }
     }
 
     h3 {
       font-family: var(--main-font);
-      font-size: 15px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 500;
       color: #fff;
+
+      @include breakpoint('medium') {
+        font-size: 15px;
+        font-weight: 600;
+      }
     }
   }
 
   &__data {
     display: none;
     padding: 10px 0 20px;
+    font-family: var(--main-font);
+    font-size: 12px;
+    line-height: 15px;
+    color: #fff;
 
-    p {
-      font-family: var(--main-font);
+    @include breakpoint('medium') {
+      max-width: 800px;
       font-size: 13px;
       line-height: 17px;
-      color: #fff;
-
-      @include breakpoint('medium') {
-        max-width: 800px;
-      }
     }
   }
 

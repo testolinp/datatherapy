@@ -1,26 +1,30 @@
-@import '../../scss/mixin';
+@import "../../scss/mixin";
 
 .ft {
-  background: #cadce5 url('/assets/ft.jpg') center bottom no-repeat;
+  background: #cadce5 url("/assets/ft.jpg") center bottom no-repeat;
   background-size: cover;
 
-  @include breakpoint('medium') {
-    background: #cadce5 url('/assets/contact.png') center bottom no-repeat;
+  @include breakpoint("medium") {
+    background: #cadce5 url("/assets/contact.png") center bottom no-repeat;
     background-size: cover;
   }
 
   &__top {
     padding: 30px 20px;
 
-    @include breakpoint('medium') {
+    @include breakpoint("medium") {
       padding: 50px 40px;
+    }
+
+    @include breakpoint("large") {
+      padding: 50px 40px 150px;
     }
 
     &__section {
       position: relative;
       padding: 0 0 30px;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         padding: 0 0 40px;
       }
 
@@ -29,26 +33,26 @@
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
 
-        @include breakpoint('medium') {
+        @include breakpoint("medium") {
           grid-template-columns: 1fr;
         }
       }
 
-      &:before {
-        display: block;
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 11px;
-        width: 200px;
-        height: 4px;
-        background: url('/assets/sep-ft.png') 0 0 no-repeat;
-        background-size: contain;
+      // &:before {
+      //   display: block;
+      //   content: '';
+      //   position: absolute;
+      //   left: 0;
+      //   bottom: 11px;
+      //   width: 200px;
+      //   height: 4px;
+      //   background: url('/assets/sep-ft.png') 0 0 no-repeat;
+      //   background-size: contain;
 
-        @include breakpoint('medium') {
-          display: none;
-        }
-      }
+      //   @include breakpoint('medium') {
+      //     display: none;
+      //   }
+      // }
 
       &:last-child {
         padding: 0;
@@ -71,51 +75,51 @@
         font-weight: 600;
         color: #3d3559;
 
-        @include breakpoint('medium') {
+        @include breakpoint("medium") {
           font-size: 13px;
           line-height: 16px;
         }
       }
 
-       p {
+      p {
         font-family: var(--main-font);
         font-size: 11px;
         line-height: 14px;
         color: #3d3559;
 
-        @include breakpoint('medium') {
+        @include breakpoint("medium") {
           font-size: 13px;
           line-height: 16px;
         }
 
-         a {
+        a {
           font-family: var(--main-font);
           font-size: 11px;
           color: #3d3559;
 
-          @include breakpoint('medium') {
+          @include breakpoint("medium") {
             font-size: 13px;
           }
-         }
-       }
+        }
+      }
     }
   }
 
   &__bottom {
     padding: 20px;
 
-    @include breakpoint('medium') {
-      padding:25px 40px;
+    @include breakpoint("medium") {
+      padding: 25px 40px;
       display: flex;
       align-items: center;
-    } 
+    }
 
     small {
       font-family: var(--main-font);
       font-size: 9px;
       color: #3d3559;
 
-      @include breakpoint('medium') {
+      @include breakpoint("medium") {
         font-size: 10px;
       }
     }

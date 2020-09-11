@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { HomepageService } from '../../../homepage.service';
 
 @Component({
   selector: 'publish-component',
@@ -6,26 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./publish.component.scss']
 })
 export class PublishComponent implements OnInit {
+  @Input() title : string;
+  @Input() description : string;
 
-  constructor() { }
+  publishings : any = [];
+  _publishing : any = [];
+
+  constructor( protected homepageService : HomepageService) { }
 
   ngOnInit() {
+    this.homepageService.getPublishings()
+    .subscribe(
+      (data) => {
+        this._publishing = data;
+        this.publishings = this._publishing.filter((publish) => publish.acf.highlight);
+      },
+      (error) => {
+        console.log(error);
+      }
+    )
   }
-
-  publishContent : any = [
-    {
-      title: "What is the best denominator with which to measure antibiotic consumption?",
-      description: "<p><strong>Authors:</strong> Curcio, D; Fernández, F<br><strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4. <br><strong>Year:</strong> 2006</p>"
-    },
-    {
-      title: "What is the best denominator with which to measure antibiotic consumption?",
-      description: "<p><strong>Authors:</strong> Curcio, D; Fernández, F<br><strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4. <br><strong>Year:</strong> 2006</p>"
-    },
-    {
-      title: "What is the best denominator with which to measure antibiotic consumption?",
-      description: "<p><strong>Authors:</strong> Curcio, D; Fernández, F<br><strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4. <br><strong>Year:</strong> 2006</p>"
-    }
-  ]
 
   publishSlider : Object = {
     dots: true,

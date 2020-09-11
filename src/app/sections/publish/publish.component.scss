@@ -25,11 +25,12 @@
     font-size: 22px;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 15px;
+    letter-spacing: 6px;
 
     @include breakpoint('medium') {
       text-align: center;
       font-size: 36px;
+      letter-spacing: 15px;
     }
   }
 
@@ -93,7 +94,7 @@
         }
 
         @include breakpoint('large') {
-          height: 80px;
+          height: 120px;
         }
       }
 

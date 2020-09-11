@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { $ } from 'protractor';
+import { Component, OnInit, Input } from '@angular/core';
+import { HomepageService } from '../../../homepage.service';
 
 @Component({
   selector: 'team-component',
@@ -7,32 +7,24 @@ import { $ } from 'protractor';
   styleUrls: ['./team.component.scss']
 })
 export class TeamComponent implements OnInit {
+  @Input() title : string;
+  @Input() description : string;
 
-  constructor() { }
+  team: any = [];
+
+  constructor( protected homepageService : HomepageService ) { }
 
   ngOnInit() {
+    this.homepageService.getMembers()
+    .subscribe(
+      (data) => {
+        this.team = data;
+      },
+      (error) => {
+        console.error(error);
+      }
+    )
   }
-
-  teamContent : any = [
-    {
-      title: "¨La correcta generación y procesamiento de los datos y la comunicación ágil y estratégica de la evidencia científica real, nos brindan un mayor conocimiento para la toma de decisiones acertadas.¨",
-      name: "EZEQUIEL LABARTHE",
-      rol: "DATATHERAPY GENERAL MANAGER",
-      email: "elabarthe@trydatatherapy.com"
-    },
-    {
-      title: "¨La correcta generación y procesamiento de los datos y la comunicación ágil y estratégica de la evidencia científica real, nos brindan un mayor conocimiento para la toma de decisiones acertadas.¨",
-      name: "EZEQUIEL LABARTHE",
-      rol: "DATATHERAPY GENERAL MANAGER",
-      email: "elabarthe@trydatatherapy.com"
-    },
-    {
-      title: "¨La correcta generación y procesamiento de los datos y la comunicación ágil y estratégica de la evidencia científica real, nos brindan un mayor conocimiento para la toma de decisiones acertadas.¨",
-      name: "EZEQUIEL LABARTHE",
-      rol: "DATATHERAPY GENERAL MANAGER",
-      email: "elabarthe@trydatatherapy.com"
-    }
-  ]
 
   teamSlider : Object = {
     dots: true,

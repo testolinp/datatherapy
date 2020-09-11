@@ -1,29 +1,27 @@
 <section class="about">
-  <h2 class="about__title">Conocenos</h2>
-  <p class="about__description"><strong>Agregar una reseña</strong> que cuente un poco la filosofía de la compañía o el estilo de trabajo o algun comentario que <strong>resalte su vocación</strong>, etc, como introducción a la sección.</p>
+  <h2 class="about__title" [innerHTML]="title"></h2>
+  <div class="about__description" [innerHTML]="description"></div>
   <div class="about__module">
-    <div class="about__module__box">
-      <div class="about__module__box__image"></div>
-      <div class="about__module__box__data">
-        <h3>Misión</h3>
-        <p>Nuestro trabajo está basado en el desarrollo de evidencia científica de alto valor a partir del análisis de datos  de la vida real utilizando metodologías estadísitcas de última generación.</p>
+    <div class="about__module__box" *ngFor="let value of values">
+      <div class="about__module__box__image">
+        <img src="{{value['_embedded']['wp:featuredmedia'][0]['source_url']}}" />
       </div>
-    </div>
-    <div class="about__module__box">
-      <div class="about__module__box__image"></div>
       <div class="about__module__box__data">
-        <h3>Visión</h3>
-        <p>Ser líderes en la generación de evidencia científica derivada del mundo real a nivel mundial para contribuir con la salud y bienestar de la comunidad.</p>
+        <h3>{{value.title.rendered}}</h3>
+        <div class="about__module__box__data__description" [innerHTML]="value.content.rendered"></div>
       </div>
     </div>
   </div>
   <div class="about__types">
     <ngx-slick-carousel [config]="aboutSlider">
-      <div ngxSlickItem class="about__types__box" *ngFor="let about of aboutContent">
-        <div class="about__types__box__image"></div>
+      <div ngxSlickItem class="about__types__box" *ngFor="let know of knows">
+        <div class="about__types__box__image">
+          <img src="{{know['_embedded']['wp:featuredmedia'][0]['source_url']}}" />
+        </div>
         <div class="about__types__box__data">
-          <h4>{{about.title}}</h4>
-          <p>{{about.description}}</p>
+          <h4>{{know.title.rendered}}</h4>
+          <div class="about__types__box__data__description" [innerHTML]="know.content.rendered"></div>
+          <p></p>
         </div>
       </div>
     </ngx-slick-carousel>

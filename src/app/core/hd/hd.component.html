@@ -1,11 +1,52 @@
 <header class="hd">
   <a routerLink="/" class="hd__lg"></a>
   <nav class="hd__nav">
-    <a href="/#conocenos" class="hd__nav__link">Conocenos</a>
-    <a href="/#equipo" class="hd__nav__link">Equipo</a>
-    <a href="/#servicios" class="hd__nav__link">Servicios</a>
-    <a href="/#publicaciones" class="hd__nav__link">Publicaciones</a>
-    <a href="/#contacto" class="hd__nav__link">Contacto</a>
+    <a href="/#know" class="hd__nav__link">{{
+      lang === "en" ? "Know us" : "Conócenos"
+    }}</a>
+    <a href="/#team" class="hd__nav__link">{{
+      lang === "en" ? "Team" : "Equipo"
+    }}</a>
+    <a href="/#services" class="hd__nav__link">{{
+      lang === "en" ? "Services" : "Servicios"
+    }}</a>
+    <a href="/#publications" class="hd__nav__link">{{
+      lang === "en" ? "Publications" : "Publicaciones"
+    }}</a>
+    <a href="/#contact" class="hd__nav__link">{{
+      lang === "en" ? "Contact us" : "Contacto"
+    }}</a>
+    <div class="hd__nav__link">
+      <a routerLink="/" [ngClass]="{ active: lang === 'en' }">En</a>
+      <a routerLink="/es" [ngClass]="{ active: lang === 'es' }">Es</a>
+    </div>
   </nav>
-  <button class="hd__hamb"></button>
+  <button class="hd__hamb" (click)="showMenu = true"></button>
 </header>
+
+<div class="menu" [ngClass]="{ 'menu--open': showMenu }">
+  <div class="menu__header">
+    <a routerLink="/" class="menu__lg"></a>
+  </div>
+  <div class="menu__content">
+    <a href="/#know" class="menu__content__link" (click)="closeMenu()">{{
+      lang === "en" ? "Know us" : "Conócenos"
+    }}</a>
+    <a href="/#team" class="menu__content__link" (click)="closeMenu()">{{
+      lang === "en" ? "Team" : "Equipo"
+    }}</a>
+    <a href="/#services" class="menu__content__link" (click)="closeMenu()">{{
+      lang === "en" ? "Services" : "Servicios"
+    }}</a>
+    <a
+      href="/#publications"
+      class="menu__content__link"
+      (click)="closeMenu()"
+      >{{ lang === "en" ? "Publications" : "Publicaciones" }}</a
+    >
+    <a href="/#contact" class="menu__content__link" (click)="closeMenu()">{{
+      lang === "en" ? "Contact us" : "Contacto"
+    }}</a>
+  </div>
+  <button class="menu__close" (click)="closeMenu()"></button>
+</div>

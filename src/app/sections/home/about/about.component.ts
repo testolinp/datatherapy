@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { HomepageService } from '../../../homepage.service';
 
 @Component({
   selector: 'about-component',
@@ -6,25 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-
-  aboutContent : any = [
-    {
-      title: "Profesionalismo",
-      description: "Seriedad y transparencia en la aplicación del método científico para el análisis de datos cumpliendo con los tiempos y metas comprometidas."
-    },
-    {
-      title: "Profesionalismo",
-      description: "Seriedad y transparencia en la aplicación del método científico para el análisis de datos cumpliendo con los tiempos y metas comprometidas."
-    },
-    {
-      title: "Servicios de Redacción Médica",
-      description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-    },
-    {
-      title: "Profesionalismo",
-      description: "Seriedad y transparencia en la aplicación del método científico para el análisis de datos cumpliendo con los tiempos y metas comprometidas."
-    }
-  ]
+  @Input() title : string;
+  @Input() description : string;
+  @Input() values;
+  @Input() knows;
 
   aboutSlider : Object = {
     dots: true,
@@ -55,8 +41,27 @@ export class AboutComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor(protected homepageService: HomepageService) { }
 
   ngOnInit() {
+    this.homepageService.getValues()
+    .subscribe(
+      (data) => {
+        this.values = data;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+
+    this.homepageService.getKnows()
+    .subscribe(
+      (data) => {
+        this.knows = data;
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 }

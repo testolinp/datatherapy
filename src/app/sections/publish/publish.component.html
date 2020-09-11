@@ -1,119 +1,18 @@
-<hd-component></hd-component>
-<section class="publish">
-  <div class="publish__back">
-    <a routerLink="/">Volver</a>
-  </div>
-  <h2 class="publish__title">Publicaciones</h2>
-  <div class="publish__description">Agregar una reseña que cuente un poco la filosofía de la compañía o el estilo de trabajo o algun comentario que resalte su vocación, etc, como introducción a la sección.</div>
-  <!-- {{publishedHeader.title ? publishedHeader.title.rendered : ''}} -->
-  <!-- <div class="publish__description" [innerHTML]="publishedHeader.content ? publishedHeader.content.rendered : ''"></div> -->
-  <div class="publish__list">
-    <div class="publish__list__box">
-      <h3 class="publish__list__box__title">What is the best denominator with which to measure antibiotic consumption?</h3>
-      <div class="publish__list__box__description">
-        <strong>Authors:</strong> Curcio, D; Fernández, F<br>
-        <strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4.<br> 
-        <strong>Year:</strong> 2006
-      </div>
-      <div class="publish__list__box__btn">
-        <a href="#" target="_blank">Ver más</a>
-      </div>
+<layout>
+  <section class="publish">
+    <div class="publish__back">
+      <a routerLink="/">Volver</a>
     </div>
-    <div class="publish__list__box">
-      <h3 class="publish__list__box__title">What is the best denominator with which to measure antibiotic consumption?</h3>
-      <div class="publish__list__box__description">
-        <strong>Authors:</strong> Curcio, D; Fernández, F<br>
-        <strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4.<br> 
-        <strong>Year:</strong> 2006
-      </div>
-      <div class="publish__list__box__btn">
-        <a href="#" target="_blank">Ver más</a>
-      </div>
+    <h2 class="publish__title">{{publishedHeader.title ? publishedHeader.title.rendered : ''}}</h2>
+    <div class="publish__description" [innerHTML]="publishedHeader.content ? publishedHeader.content.rendered : ''"></div>
+    <div class="publish__list">
+      <a target="_blank" href="{{note.acf.url}}" class="publish__list__box" *ngFor="let note of publishedNotes">
+        <h3 class="publish__list__box__title">{{note.title.rendered}}</h3>
+        <div class="publish__list__box__description" [innerHTML]="note.content.rendered"></div>
+        <div class="publish__list__box__btn">
+          <a href="#" target="_blank">Ver más</a>
+        </div>
+      </a>
     </div>
-    <div class="publish__list__box">
-      <h3 class="publish__list__box__title">What is the best denominator with which to measure antibiotic consumption?</h3>
-      <div class="publish__list__box__description">
-        <strong>Authors:</strong> Curcio, D; Fernández, F<br>
-        <strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4.<br> 
-        <strong>Year:</strong> 2006
-      </div>
-      <div class="publish__list__box__btn">
-        <a href="#" target="_blank">Ver más</a>
-      </div>
-    </div>
-    <div class="publish__list__box">
-      <h3 class="publish__list__box__title">What is the best denominator with which to measure antibiotic consumption?</h3>
-      <div class="publish__list__box__description">
-        <strong>Authors:</strong> Curcio, D; Fernández, F<br>
-        <strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4.<br> 
-        <strong>Year:</strong> 2006
-      </div>
-      <div class="publish__list__box__btn">
-        <a href="#" target="_blank">Ver más</a>
-      </div>
-    </div>
-    <div class="publish__list__box">
-      <h3 class="publish__list__box__title">What is the best denominator with which to measure antibiotic consumption?</h3>
-      <div class="publish__list__box__description">
-        <strong>Authors:</strong> Curcio, D; Fernández, F<br>
-        <strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4.<br> 
-        <strong>Year:</strong> 2006
-      </div>
-      <div class="publish__list__box__btn">
-        <a href="#" target="_blank">Ver más</a>
-      </div>
-    </div>
-    <div class="publish__list__box">
-      <h3 class="publish__list__box__title">What is the best denominator with which to measure antibiotic consumption?</h3>
-      <div class="publish__list__box__description">
-        <strong>Authors:</strong> Curcio, D; Fernández, F<br>
-        <strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4.<br> 
-        <strong>Year:</strong> 2006
-      </div>
-      <div class="publish__list__box__btn">
-        <a href="#" target="_blank">Ver más</a>
-      </div>
-    </div>
-    <div class="publish__list__box">
-      <h3 class="publish__list__box__title">What is the best denominator with which to measure antibiotic consumption?</h3>
-      <div class="publish__list__box__description">
-        <strong>Authors:</strong> Curcio, D; Fernández, F<br>
-        <strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4.<br> 
-        <strong>Year:</strong> 2006
-      </div>
-      <div class="publish__list__box__btn">
-        <a href="#" target="_blank">Ver más</a>
-      </div>
-    </div>
-    <div class="publish__list__box">
-      <h3 class="publish__list__box__title">What is the best denominator with which to measure antibiotic consumption?</h3>
-      <div class="publish__list__box__description">
-        <strong>Authors:</strong> Curcio, D; Fernández, F<br>
-        <strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4.<br> 
-        <strong>Year:</strong> 2006
-      </div>
-      <div class="publish__list__box__btn">
-        <a href="#" target="_blank">Ver más</a>
-      </div>
-    </div>
-    <div class="publish__list__box">
-      <h3 class="publish__list__box__title">What is the best denominator with which to measure antibiotic consumption?</h3>
-      <div class="publish__list__box__description">
-        <strong>Authors:</strong> Curcio, D; Fernández, F<br>
-        <strong>Journal:</strong> Clin Microbiol Infect. 2006 Aug;12(8):701-4.<br> 
-        <strong>Year:</strong> 2006
-      </div>
-      <div class="publish__list__box__btn">
-        <a href="#" target="_blank">Ver más</a>
-      </div>
-    </div>
-    <!-- <div class="publish__list__box" *ngFor="let note of publishedNotes">
-      <h3 class="publish__list__box__title">{{note.title.rendered}}</h3>
-      <div class="publish__list__box__description" [innerHTML]="note.content.rendered"></div>
-      <div class="publish__list__box__btn">
-        <a href="#" target="_blank">Ver más</a>
-      </div>
-    </div> -->
-  </div>
-</section>
-<ft-component></ft-component>
+  </section>
+</layout>

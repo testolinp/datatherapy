@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 
+import { LayoutComponent } from './layout/layout.component';
 import { HdComponent } from './hd/hd.component';
 import { FtComponent } from './ft/ft.component';
 
 @NgModule({
-  imports: [],
-  exports: [ HdComponent, FtComponent],
-  declarations: [ HdComponent, FtComponent],
+  exports: [ LayoutComponent, HdComponent, FtComponent],
+  declarations: [ LayoutComponent, HdComponent, FtComponent],
   providers: []
 })
 

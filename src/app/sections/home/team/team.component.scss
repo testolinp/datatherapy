@@ -78,6 +78,11 @@
         &__wrapper {
           background: #000;
           height: 200px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+          }
         }
 
         &__actions {
@@ -101,7 +106,7 @@
           text-align: left;
         }
 
-        h3 {
+        &__title {
           font-family: var(--main-font);
           font-size: 12px;
           line-height: 16px;
@@ -117,7 +122,7 @@
           }
         }
 
-        p {
+        &__description {
           padding: 15px 0 0;
           font-family: var(--main-font);
           font-size: 11px;

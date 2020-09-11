@@ -1,20 +1,27 @@
 <section class="publish">
-  <h2 class="publish__title">Publicaciones</h2>
-  <p class="publish__description"><strong>Agregar una reseña</strong> que cuente un poco la filosofía de la compañía o el estilo de trabajo o algun comentario que <strong>resalte su vocación</strong>, etc, como introducción a la sección.</p>
+  <h2 class="publish__title" [innerHTML]="title"></h2>
+  <div class="publish__description" [innerHTML]="description"></div>
   <div class="publish__list">
     <ngx-slick-carousel [config]="publishSlider">
-      <a ngxSlickItem target="_blank" class="publish__list__box" *ngFor="let publish of publishContent">
+      <a
+        ngxSlickItem
+        target="_blank"
+        href="{{ publish.acf.url }}"
+        class="publish__list__box"
+        *ngFor="let publish of publishings"
+      >
         <div class="publish__list__box__data">
-          <h3>{{publish.title}}</h3>
-          <div [innerHTML]="publish.description"></div>
+          <h3>{{ publish.title.rendered }}</h3>
+          <div [innerHTML]="publish.content.rendered"></div>
           <div class="publish__list__box__data__btn">
-            <span>Ver más</span>
+            <span>View More</span>
           </div>
         </div>
       </a>
     </ngx-slick-carousel>
   </div>
   <div class="publish__btn">
-    <a routerLink="/publicaciones">Ver todas las publicaciones</a>
+    <a routerLink="/publicaciones">See all posts</a
+    ><!--Ver todas las publicaciones -->
   </div>
 </section>

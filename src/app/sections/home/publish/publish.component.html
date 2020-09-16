@@ -14,14 +14,16 @@
           <h3>{{ publish.title.rendered }}</h3>
           <div [innerHTML]="publish.content.rendered"></div>
           <div class="publish__list__box__data__btn">
-            <span>View More</span>
+            <span>{{ lang == "en" ? "View More" : "Ver más" }}</span>
           </div>
         </div>
       </a>
     </ngx-slick-carousel>
   </div>
   <div class="publish__btn">
-    <a routerLink="/publicaciones">See all posts</a
+    <a routerLink="/publicaciones">{{
+      lang == "en" ? "See all posts" : "Ver todas las publicaciones"
+    }}</a
     ><!--Ver todas las publicaciones -->
   </div>
 </section>

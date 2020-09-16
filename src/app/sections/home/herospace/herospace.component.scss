@@ -56,6 +56,11 @@
         font-size: 48px;
         line-height: 46px;
       }
+
+      @include breakpoint("large") {
+        font-size: 68px;
+        line-height: 66px;
+      }
     }
 
     &__shortcode {
@@ -71,6 +76,11 @@
         padding: 20px 0 0;
         font-size: 25px;
         line-height: 27px;
+      }
+
+      @include breakpoint("large") {
+        font-size: 35px;
+        line-height: 37px;
       }
     }
 

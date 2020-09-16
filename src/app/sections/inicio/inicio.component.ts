@@ -19,7 +19,7 @@ export class InicioComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.homepageService.getHomepage().subscribe(
+    this.homepageService.getHomepage("es").subscribe(
       (data) => {
         this.homepage = data[0].acf;
       },

@@ -1,51 +1,51 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { HomepageService } from '../../../homepage.service';
+import { Component, OnInit, Input } from "@angular/core";
+import { HomepageService } from "../../../homepage.service";
 
 @Component({
-  selector: 'about-component',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  selector: "about-component",
+  templateUrl: "./about.component.html",
+  styleUrls: ["./about.component.scss"],
 })
 export class AboutComponent implements OnInit {
-  @Input() title : string;
-  @Input() description : string;
+  @Input() title: string;
+  @Input() description: string;
   @Input() values;
   @Input() knows;
+  @Input() lang: string;
 
-  aboutSlider : Object = {
+  aboutSlider: Object = {
     dots: true,
     infinite: false,
     responsive: [
       {
         breakpoint: 1600,
-        settings: "unslick"
+        settings: "unslick",
       },
       {
         breakpoint: 1024,
-        settings: "unslick"
+        settings: "unslick",
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
+          slidesToScroll: 1,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
-  constructor(protected homepageService: HomepageService) { }
+  constructor(protected homepageService: HomepageService) {}
 
   ngOnInit() {
-    this.homepageService.getValues()
-    .subscribe(
+    this.homepageService.getValues(this.lang).subscribe(
       (data) => {
         this.values = data;
       },
@@ -54,8 +54,7 @@ export class AboutComponent implements OnInit {
       }
     );
 
-    this.homepageService.getKnows()
-    .subscribe(
+    this.homepageService.getKnows(this.lang).subscribe(
       (data) => {
         this.knows = data;
       },

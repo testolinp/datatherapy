@@ -1,59 +1,58 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
-import { HomepageService } from '../../../homepage.service';
+import { HomepageService } from "../../../homepage.service";
 
 @Component({
-  selector: 'services-component',
-  templateUrl: './services.component.html',
-  styleUrls: ['./services.component.scss']
+  selector: "services-component",
+  templateUrl: "./services.component.html",
+  styleUrls: ["./services.component.scss"],
 })
 export class ServicesComponent implements OnInit {
-  @Input() title : string;
-  @Input() description : string;
+  @Input() title: string;
+  @Input() description: string;
+  @Input() lang: string;
 
-  services : any = [];
+  services: any = [];
 
-  constructor(protected homepageService : HomepageService) { }
+  constructor(protected homepageService: HomepageService) {}
 
   ngOnInit() {
-    this.homepageService.getServices()
-    .subscribe(
+    this.homepageService.getServices(this.lang).subscribe(
       (data) => {
         this.services = data;
       },
       (error) => {
         console.error(error);
       }
-    )
+    );
   }
 
-  serviceSlider : Object = {
+  serviceSlider: Object = {
     dots: true,
     infinite: false,
     responsive: [
       {
         breakpoint: 1600,
-        settings: "unslick"
+        settings: "unslick",
       },
       {
         breakpoint: 1024,
-        settings: "unslick"
+        settings: "unslick",
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
+          slidesToScroll: 1,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
-
 }

@@ -7,39 +7,45 @@ import { HttpClient } from "@angular/common/http";
 export class HomepageService {
   constructor(protected http: HttpClient) {}
 
-  getHomepage() {
+  getHomepage(lang) {
+    let currentLang = lang == "en" ? "homepage" : "inicio";
     return this.http.get(
-      "http://admin.trydatatherapy.com/wp-json/wp/v2/pages?slug=homepage"
+      `http://admin.trydatatherapy.com/wp-json/wp/v2/pages?slug=${currentLang}`
     );
   }
 
-  getValues() {
+  getValues(lang) {
+    let currentLang = lang == "en" ? "/en" : "";
     return this.http.get(
-      "http://admin.trydatatherapy.com/en/wp-json/wp/v2/valores?_embed"
+      `http://admin.trydatatherapy.com${currentLang}/wp-json/wp/v2/valores?_embed`
     );
   }
 
-  getKnows() {
+  getKnows(lang) {
+    let currentLang = lang == "en" ? "/en" : "";
     return this.http.get(
-      "http://admin.trydatatherapy.com/en/wp-json/wp/v2/know?_embed"
+      `http://admin.trydatatherapy.com${currentLang}/wp-json/wp/v2/know?_embed`
     );
   }
 
-  getMembers() {
+  getMembers(lang) {
+    let currentLang = lang == "en" ? "/en" : "";
     return this.http.get(
-      "http://admin.trydatatherapy.com/en/wp-json/wp/v2/miembros?_embed"
+      `http://admin.trydatatherapy.com${currentLang}/wp-json/wp/v2/miembros?_embed`
     );
   }
 
-  getServices() {
+  getServices(lang) {
+    let currentLang = lang == "en" ? "/en" : "";
     return this.http.get(
-      "http://admin.trydatatherapy.com/en/wp-json/wp/v2/service?_embed"
+      `http://admin.trydatatherapy.com${currentLang}/wp-json/wp/v2/service?_embed`
     );
   }
 
-  getPublishings() {
+  getPublishings(lang) {
+    let currentLang = lang == "en" ? "/en" : "";
     return this.http.get(
-      "http://admin.trydatatherapy.com/wp-json/wp/v2/publicaciones?per_page=100"
+      `http://admin.trydatatherapy.com${currentLang}/wp-json/wp/v2/publicaciones?per_page=100`
     );
   }
 

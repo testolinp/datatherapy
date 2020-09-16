@@ -1,24 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Component, OnInit } from "@angular/core";
+import { Title } from "@angular/platform-browser";
 
-import { HomepageService } from '../../homepage.service';
+import { HomepageService } from "../../homepage.service";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"],
 })
 export class HomeViewComponent implements OnInit {
-
   homepage: any = [];
 
-  constructor( private titleService : Title, protected homepageService: HomepageService ) {
+  constructor(
+    private titleService: Title,
+    protected homepageService: HomepageService
+  ) {
     this.titleService.setTitle("Datatherapy");
   }
 
   ngOnInit() {
-    this.homepageService.getHomepage()
-    .subscribe(
+    this.homepageService.getHomepage("en").subscribe(
       (data) => {
         this.homepage = data[0].acf;
       },
@@ -27,5 +28,4 @@ export class HomeViewComponent implements OnInit {
       }
     );
   }
-
 }

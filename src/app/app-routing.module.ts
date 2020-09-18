@@ -4,11 +4,13 @@ import { HomeViewComponent } from "./sections/home/home.component";
 import { InicioComponent } from "./sections/inicio/inicio.component";
 import { ServicesViewComponent } from "./sections/services/services.component";
 import { PublishViewComponent } from "./sections/publish/publish.component";
+import { PublicacionesComponent } from "./sections/publicaciones/publicaciones.component";
 
 const routes: Routes = [
   { path: "", component: HomeViewComponent },
   { path: "servicios/:slug", component: ServicesViewComponent },
-  { path: "publicaciones", component: PublishViewComponent },
+  { path: "publicaciones", component: PublicacionesComponent },
+  { path: "publish", component: PublishViewComponent },
   { path: "es", component: InicioComponent },
   { path: "**", component: HomeViewComponent },
 ];

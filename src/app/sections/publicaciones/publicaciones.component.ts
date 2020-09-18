@@ -1,14 +1,14 @@
 import { Component, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 
-import { PublishService } from "./publish.service";
+import { PublishService } from "../publish/publish.service";
 
 @Component({
-  selector: "app-publish",
-  templateUrl: "./publish.component.html",
-  styleUrls: ["./publish.component.scss"],
+  selector: "app-publicaciones",
+  templateUrl: "./publicaciones.component.html",
+  styleUrls: ["./publicaciones.component.scss"],
 })
-export class PublishViewComponent implements OnInit {
+export class PublicacionesComponent implements OnInit {
   publishedNotes: any = [];
   publishedHeader: Object = {};
   errorMessage = "";
@@ -17,11 +17,11 @@ export class PublishViewComponent implements OnInit {
     private publishService: PublishService,
     private titleService: Title
   ) {
-    this.titleService.setTitle("Datatherapy | Publications");
+    this.titleService.setTitle("Datatherapy | Publicaciones");
   }
 
   ngOnInit(): void {
-    this.publishService.getHeader("en").subscribe({
+    this.publishService.getHeader("es").subscribe({
       next: (header) => {
         this.publishedHeader = header;
       },

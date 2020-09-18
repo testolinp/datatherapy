@@ -21,7 +21,7 @@
     </ngx-slick-carousel>
   </div>
   <div class="publish__btn">
-    <a routerLink="/publicaciones">{{
+    <a [routerLink]="lang == 'en' ? '/publish' : '/publicaciones'">{{
       lang == "en" ? "See all posts" : "Ver todas las publicaciones"
     }}</a
     ><!--Ver todas las publicaciones -->

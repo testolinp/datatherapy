@@ -9,9 +9,13 @@ import { catchError, tap, map } from "rxjs/operators";
 export class PublishService {
   constructor(private http: HttpClient) {}
 
-  getHeader() {
+  getHeader(lang) {
+    let currentLang = lang == "en" ? "/en" : "";
+
     return this.http
-      .get(`http://admin.trydatatherapy.com/wp-json/wp/v2/pages/16`)
+      .get(
+        `http://admin.trydatatherapy.com${currentLang}/wp-json/wp/v2/pages/16`
+      )
       .pipe(
         tap((data) => JSON.stringify(data)),
         catchError(this.handlerError)

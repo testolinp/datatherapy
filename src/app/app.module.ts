@@ -23,6 +23,7 @@ import { ToogleComponent } from './sections/services/components/toogle/toogle.co
 
 import { HomepageService } from './homepage.service';
 import { InicioComponent } from './sections/inicio/inicio.component';
+import { PublicacionesComponent } from './sections/publicaciones/publicaciones.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { InicioComponent } from './sections/inicio/inicio.component';
     ServicesComponent,
     PublishComponent,
     ToogleComponent,
-    InicioComponent
+    InicioComponent,
+    PublicacionesComponent
   ],
   imports: [
     BrowserModule,

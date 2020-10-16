@@ -26,6 +26,10 @@
       font-size: 36px;
       letter-spacing: 20px;
     }
+
+    @include breakpoint('large') {
+      font-size: 38px;
+    }
   }
 
   &__description {
@@ -47,6 +51,11 @@
       line-height: 20px;
       max-width: 550px;
       margin: 0 auto;
+    }
+
+    @include breakpoint('large') {
+      font-size: 17px;
+      line-height: 22px;
     }
   }
 
@@ -94,6 +103,11 @@
             font-size: 20px;
             line-height: 23px;
           }
+
+          @include breakpoint('large') {
+            font-size: 22px;
+            line-height: 25px;
+          }
         }
 
         &__btn {
@@ -108,6 +122,10 @@
 
             @include breakpoint('medium') {
               font-size: 12px;
+            }
+
+            @include breakpoint('large') {
+              font-size: 14px;
             }
           }
         }
@@ -132,6 +150,10 @@
         font-size: 15px;
       }
 
+      @include breakpoint('large') {
+        font-size: 17px;
+      }
+
       &:hover {
         @include breakpoint('large') {
           text-decoration: none;
@@ -153,6 +175,11 @@
       @include breakpoint('medium') {
         font-size: 12px;
         line-height: 17px;
+      }
+
+      @include breakpoint('large') {
+        font-size: 14px;
+        line-height: 19px;
       }
 
       strong {

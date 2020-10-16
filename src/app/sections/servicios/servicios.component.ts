@@ -1,14 +1,14 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 
 import { HomepageService } from "../../homepage.service";
 
 @Component({
-  selector: "app-services",
-  templateUrl: "./services.component.html",
-  styleUrls: ["./services.component.scss"],
+  selector: "app-servicios",
+  templateUrl: "./servicios.component.html",
+  styleUrls: ["./servicios.component.scss"],
 })
-export class ServicesViewComponent implements OnInit {
+export class ServiciosComponent implements OnInit {
   serviceHeader: any;
   servicesList: any = [];
 
@@ -18,11 +18,11 @@ export class ServicesViewComponent implements OnInit {
     private titleService: Title,
     private homepageService: HomepageService
   ) {
-    this.titleService.setTitle("Datatherapy | Services");
+    this.titleService.setTitle("Datatherapy | Servicios");
   }
 
   ngOnInit() {
-    this.homepageService.getServicePage("en").subscribe((data) => {
+    this.homepageService.getServicePage("es").subscribe((data) => {
       this.serviceHeader = data[0];
       console.log('this.serviceHeader', this.serviceHeader)
     }),

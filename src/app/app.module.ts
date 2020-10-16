@@ -24,6 +24,7 @@ import { ToogleComponent } from './sections/services/components/toogle/toogle.co
 import { HomepageService } from './homepage.service';
 import { InicioComponent } from './sections/inicio/inicio.component';
 import { PublicacionesComponent } from './sections/publicaciones/publicaciones.component';
+import { ServiciosComponent } from './sections/servicios/servicios.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { PublicacionesComponent } from './sections/publicaciones/publicaciones.c
     PublishComponent,
     ToogleComponent,
     InicioComponent,
-    PublicacionesComponent
+    PublicacionesComponent,
+    ServiciosComponent
   ],
   imports: [
     BrowserModule,

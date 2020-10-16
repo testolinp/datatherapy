@@ -38,6 +38,10 @@
         font-size: 15px;
         font-weight: 600;
       }
+
+      @include breakpoint('large') {
+        font-size: 17px;
+      }
     }
   }
 
@@ -53,6 +57,11 @@
       max-width: 800px;
       font-size: 13px;
       line-height: 17px;
+    }
+
+    @include breakpoint('large') {
+      font-size: 15px;
+      line-height: 19px;
     }
   }
 

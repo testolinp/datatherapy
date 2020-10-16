@@ -79,6 +79,11 @@
           font-size: 13px;
           line-height: 16px;
         }
+
+        @include breakpoint("large") {
+          font-size: 15px;
+          line-height: 17px;
+        }
       }
 
       p {
@@ -92,6 +97,11 @@
           line-height: 16px;
         }
 
+        @include breakpoint("large") {
+          font-size: 15px;
+          line-height: 17px;
+        }
+
         a {
           font-family: var(--main-font);
           font-size: 11px;
@@ -99,6 +109,10 @@
 
           @include breakpoint("medium") {
             font-size: 13px;
+          }
+
+          @include breakpoint("large") {
+            font-size: 15px;
           }
         }
       }
@@ -121,6 +135,10 @@
 
       @include breakpoint("medium") {
         font-size: 10px;
+      }
+
+      @include breakpoint("large") {
+        font-size: 12px;
       }
     }
   }

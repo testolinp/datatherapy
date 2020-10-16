@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class HomepageService {
-  constructor(protected http: HttpClient) {}
+  constructor(protected http: HttpClient) { }
 
   getHomepage(lang) {
     let currentLang = lang == "en" ? "homepage" : "inicio";
@@ -67,9 +67,10 @@ export class HomepageService {
     );
   }
 
-  getServicePage() {
+  getServicePage(lang) {
+    let currentLang = lang == "en" ? "/en" : "";
     return this.http.get(
-      "http://admin.trydatatherapy.com/wp-json/wp/v2/pages?slug=servicios"
+      `http://admin.trydatatherapy.com${currentLang}/wp-json/wp/v2/pages?slug=servicios`
     );
   }
 }

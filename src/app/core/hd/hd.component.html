@@ -1,5 +1,5 @@
 <header class="hd">
-  <a routerLink="/" class="hd__lg"></a>
+  <a [routerLink]="lang === 'en' ? '/' : '/es'" class="hd__lg"></a>
   <nav class="hd__nav">
     <a href="/#know" class="hd__nav__link">{{
       lang === "en" ? "Know us" : "Conócenos"

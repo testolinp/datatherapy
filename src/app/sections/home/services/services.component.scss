@@ -26,6 +26,10 @@
       font-size: 36px;
       letter-spacing: 20px;
     }
+
+    @include breakpoint('large') {
+      font-size: 38px;
+    }
   }
 
   &__description {
@@ -47,6 +51,11 @@
       line-height: 20px;
       max-width: 550px;
       margin: 0 auto;
+    }
+
+    @include breakpoint('large') {
+      font-size: 17px;
+      line-height: 22px;
     }
   }
 
@@ -98,8 +107,8 @@
           @include breakpoint('large') {
             min-height: 46px;
             padding-right: 50px;
-            font-size: 20px;
-            line-height: 23px;
+            font-size: 22px;
+            line-height: 25px;
           }
         }
 
@@ -114,6 +123,11 @@
             padding: 20px 0 0;
             font-size: 12px;
             line-height: 16px;
+          }
+
+          @include breakpoint('large') {
+            font-size: 14px;
+            line-height: 18px;
           }
 
           strong {

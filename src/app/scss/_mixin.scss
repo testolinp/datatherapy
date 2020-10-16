@@ -1,25 +1,27 @@
 @mixin breakpoint($point, $value: 0) {
   @if $point == "small" {
-    @media (min-width: 320px) { @content; }
-  }
-
-  @else if $point == "medium" {
-    @media (min-width: 768px) { @content; }
-  }
-
-  @else if $point == "large" {
-    @media (min-width: 1280px) { @content; }
-  }
-
-  @else if $point == "extra-large" { 
-    @media (min-width: 1440px) { @content; }
-  }
-
-  @else if $point == "super-extra-large" {
-    @media (min-width: 1680px) { @content; }
-  }
-
-  @else {
-    @media ($point: $value) { @content; }
+    @media (min-width: 320px) {
+      @content;
+    }
+  } @else if $point == "medium" {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == "large" {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  } @else if $point == "extra-large" {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  } @else if $point == "super-extra-large" {
+    @media (min-width: 1680px) {
+      @content;
+    }
+  } @else {
+    @media ($point: $value) {
+      @content;
+    }
   }
 }

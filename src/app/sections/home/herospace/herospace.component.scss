@@ -58,8 +58,8 @@
       }
 
       @include breakpoint("large") {
-        font-size: 68px;
-        line-height: 66px;
+        font-size: 70px;
+        line-height: 68px;
       }
     }
 
@@ -79,8 +79,8 @@
       }
 
       @include breakpoint("large") {
-        font-size: 35px;
-        line-height: 37px;
+        font-size: 37px;
+        line-height: 39px;
       }
     }
 
@@ -99,6 +99,11 @@
         font-size: 25px;
         line-height: 27px;
         max-width: 45%;
+      }
+
+      @include breakpoint("large") {
+        font-size: 27px;
+        line-height: 29px;
       }
     }
   }

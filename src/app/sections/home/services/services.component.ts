@@ -14,7 +14,7 @@ export class ServicesComponent implements OnInit {
 
   services: any = [];
 
-  constructor(protected homepageService: HomepageService) {}
+  constructor(protected homepageService: HomepageService) { }
 
   ngOnInit() {
     this.homepageService.getServices(this.lang).subscribe(

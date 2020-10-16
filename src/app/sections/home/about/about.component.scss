@@ -46,6 +46,10 @@
       font-size: 36px;
       letter-spacing: 20px;
     }
+
+    @include breakpoint('large') {
+      font-size: 38px;
+    }
   }
 
   &__description {
@@ -67,6 +71,11 @@
       line-height: 20px;
       max-width: 550px;
       margin: 0 auto;
+    }
+
+    @include breakpoint('large') {
+      font-size: 17px;
+      line-height: 22px;
     }
   }
 
@@ -141,6 +150,10 @@
           @include breakpoint('medium') {
             font-size: 20px;
           }
+
+          @include breakpoint('large') {
+            font-size: 22px;
+          }
         }
 
         &__description {
@@ -154,6 +167,11 @@
             padding: 15px 0 0;
             font-size: 12px;
             line-height: 15px;
+          }
+
+          @include breakpoint('large') {
+            font-size: 14px;
+            line-height: 17px;
           }
 
           strong {
@@ -213,6 +231,10 @@
           @include breakpoint('medium') {
             font-size: 20px;
           }
+
+          @include breakpoint('large') {
+            font-size: 22px;
+          }
         }
 
         &__description {
@@ -226,6 +248,11 @@
             padding: 15px 0 0;
             font-size: 12px;
             line-height: 15px;
+          }
+
+          @include breakpoint('large') {
+            font-size: 14px;
+            line-height: 17px;
           }
 
           strong {

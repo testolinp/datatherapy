@@ -1,3 +1,3 @@
 <hd-component [lang]="lang"></hd-component>
 <ng-content></ng-content>
-<ft-component id="contact" [lang]="lang"></ft-component>
+<ft-component id="{{lang === 'en' ? 'contact' : 'contacto'}}" [lang]="lang"></ft-component>

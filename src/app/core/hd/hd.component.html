@@ -1,19 +1,19 @@
 <header class="hd">
   <a [routerLink]="lang === 'en' ? '/' : '/es'" class="hd__lg"></a>
   <nav class="hd__nav">
-    <a href="/#know" class="hd__nav__link">{{
+    <a href="{{lang === 'en' ? '/#know' : '/es#conocenos'}}" class="hd__nav__link">{{
       lang === "en" ? "Know us" : "Conócenos"
     }}</a>
-    <a href="/#team" class="hd__nav__link">{{
+    <a href="{{lang === 'en' ? '/#team' : '/es#equipo'}}" class="hd__nav__link">{{
       lang === "en" ? "Team" : "Equipo"
     }}</a>
-    <a href="/#services" class="hd__nav__link">{{
+    <a href="{{lang === 'en' ? '/#services' : '/es#servicios'}}" class="hd__nav__link">{{
       lang === "en" ? "Services" : "Servicios"
     }}</a>
-    <a href="/#publications" class="hd__nav__link">{{
+    <a href="{{lang === 'en' ? '/#publications' : '/es#publicaciones'}}" class="hd__nav__link">{{
       lang === "en" ? "Publications" : "Publicaciones"
     }}</a>
-    <a href="/#contact" class="hd__nav__link">{{
+    <a href="{{lang === 'en' ? '/#contact' : '/es#contacto'}}" class="hd__nav__link">{{
       lang === "en" ? "Contact us" : "Contacto"
     }}</a>
     <div class="hd__nav__link">

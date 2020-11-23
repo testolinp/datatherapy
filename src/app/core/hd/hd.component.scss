@@ -190,5 +190,31 @@
       text-transform: uppercase;
       letter-spacing: 2px;
     }
+
+    &__lang {
+      padding-top: 40px;
+
+      a {
+        font-family: var(--main-font);
+        font-size: 14px;
+        color: #36304e;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        &.active {
+          font-weight: 700;
+        }
+
+        &:first-child {
+          &:after {
+            content: '/';
+            font-family: var(--main-font);
+            font-size: 14px;
+            color: #36304e;
+            font-weight: normal;
+          }
+        }
+      }
+    }
   }
 }

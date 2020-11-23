@@ -30,6 +30,7 @@ export class ServicesComponent implements OnInit {
   serviceSlider: Object = {
     dots: true,
     infinite: false,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 1600,

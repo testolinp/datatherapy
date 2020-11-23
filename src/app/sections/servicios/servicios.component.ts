@@ -34,7 +34,7 @@ export class ServiciosComponent implements OnInit {
       window.location.pathname.replace("/servicios/", "") ==
       "evidencia-del-mundo-real"
     ) {
-      this.homepageService.getServiceEvidence().subscribe((data) => {
+      this.homepageService.getServiceEvidence("es").subscribe((data) => {
         this.servicesList = data;
       }),
         (error) => {
@@ -46,7 +46,7 @@ export class ServiciosComponent implements OnInit {
       window.location.pathname.replace("/servicios/", "") ==
       "revisiones-sistematicas-y-meta-analisis"
     ) {
-      this.homepageService.getServiceRevision().subscribe((data) => {
+      this.homepageService.getServiceRevision("es").subscribe((data) => {
         this.servicesList = data;
       }),
         (error) => {
@@ -57,7 +57,7 @@ export class ServiciosComponent implements OnInit {
     if (
       window.location.pathname.replace("/servicios/", "") == "redaccion-medica"
     ) {
-      this.homepageService.getServiceRedaction().subscribe((data) => {
+      this.homepageService.getServiceRedaction("es").subscribe((data) => {
         this.servicesList = data;
       }),
         (error) => {

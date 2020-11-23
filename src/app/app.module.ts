@@ -25,6 +25,7 @@ import { HomepageService } from './homepage.service';
 import { InicioComponent } from './sections/inicio/inicio.component';
 import { PublicacionesComponent } from './sections/publicaciones/publicaciones.component';
 import { ServiciosComponent } from './sections/servicios/servicios.component';
+import { DashTitlePipe } from './dash-title.pipe';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ServiciosComponent } from './sections/servicios/servicios.component';
     ToogleComponent,
     InicioComponent,
     PublicacionesComponent,
-    ServiciosComponent
+    ServiciosComponent,
+    DashTitlePipe
   ],
   imports: [
     BrowserModule,

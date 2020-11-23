@@ -16,6 +16,7 @@ export class AboutComponent implements OnInit {
   aboutSlider: Object = {
     dots: true,
     infinite: false,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 1600,
@@ -42,7 +43,7 @@ export class AboutComponent implements OnInit {
     ],
   };
 
-  constructor(protected homepageService: HomepageService) {}
+  constructor(protected homepageService: HomepageService) { }
 
   ngOnInit() {
     this.homepageService.getValues(this.lang).subscribe(

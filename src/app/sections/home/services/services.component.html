@@ -3,7 +3,7 @@
   <div class="services__description" [innerHTML]="description"></div>
   <div class="services__list">
     <ngx-slick-carousel [config]="serviceSlider">
-      <a ngxSlickItem *ngFor="let service of services" routerLink="/{{lang == 'es' ? 'servicios' : 'services'}}/{{service.slug}}" class="services__list__box">
+      <a ngxSlickItem *ngFor="let service of services" routerLink="/{{lang == 'es' ? 'servicios' : 'services'}}/{{lang == 'es' ? service.slug : service.title.rendered | dashTitle : '-'}}" class="services__list__box">
         <div class="services__list__box__image">
           <img src="{{service['_embedded']['wp:featuredmedia'][0]['source_url']}}" />
         </div>

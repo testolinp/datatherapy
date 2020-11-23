@@ -15,7 +15,7 @@ export class PublishComponent implements OnInit {
   publishings: any = [];
   _publishing: any = [];
 
-  constructor(protected homepageService: HomepageService) {}
+  constructor(protected homepageService: HomepageService) { }
 
   ngOnInit() {
     this.homepageService.getPublishings(this.lang).subscribe(
@@ -34,6 +34,7 @@ export class PublishComponent implements OnInit {
   publishSlider: Object = {
     dots: true,
     infinite: false,
+    autoplay: true,
     responsive: [
       {
         breakpoint: 1600,

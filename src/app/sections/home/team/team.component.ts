@@ -13,7 +13,7 @@ export class TeamComponent implements OnInit {
 
   team: any = [];
 
-  constructor(protected homepageService: HomepageService) {}
+  constructor(protected homepageService: HomepageService) { }
 
   ngOnInit() {
     this.homepageService.getMembers(this.lang).subscribe(

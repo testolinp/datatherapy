@@ -24,7 +24,6 @@ export class ServicesViewComponent implements OnInit {
   ngOnInit() {
     this.homepageService.getServicePage("en").subscribe((data) => {
       this.serviceHeader = data[0];
-      console.log('this.serviceHeader', this.serviceHeader)
     }),
       (error) => {
         console.log(error);
@@ -32,9 +31,10 @@ export class ServicesViewComponent implements OnInit {
 
     if (
       window.location.pathname.replace("/servicios/", "") ==
-      "evidencia-del-mundo-real"
+      "evidencia-del-mundo-real" || window.location.pathname.replace("/services/", "") ==
+      "evidence-from-the-real-world"
     ) {
-      this.homepageService.getServiceEvidence().subscribe((data) => {
+      this.homepageService.getServiceEvidence("en").subscribe((data) => {
         this.servicesList = data;
       }),
         (error) => {
@@ -44,9 +44,10 @@ export class ServicesViewComponent implements OnInit {
 
     if (
       window.location.pathname.replace("/servicios/", "") ==
-      "revisiones-sistematicas-y-meta-analisis"
+      "revisiones-sistematicas-y-meta-analisis" || window.location.pathname.replace("/services/", "") ==
+      "systematic-reviews-and-meta-analysis"
     ) {
-      this.homepageService.getServiceRevision().subscribe((data) => {
+      this.homepageService.getServiceRevision("en").subscribe((data) => {
         this.servicesList = data;
       }),
         (error) => {
@@ -55,9 +56,10 @@ export class ServicesViewComponent implements OnInit {
     }
 
     if (
-      window.location.pathname.replace("/servicios/", "") == "redaccion-medica"
+      window.location.pathname.replace("/servicios/", "") == "redaccion-medica" || window.location.pathname.replace("/services/", "") ==
+      "medical-writing"
     ) {
-      this.homepageService.getServiceRedaction().subscribe((data) => {
+      this.homepageService.getServiceRedaction("en").subscribe((data) => {
         this.servicesList = data;
       }),
         (error) => {

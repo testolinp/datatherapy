@@ -49,21 +49,24 @@ export class HomepageService {
     );
   }
 
-  getServiceEvidence() {
+  getServiceEvidence(lang) {
+    let currentLang = lang == "en" ? "/en" : "";
     return this.http.get(
-      "http://admin.trydatatherapy.com/wp-json/wp/v2/evidencia?per_page=100"
+      `http://admin.trydatatherapy.com${currentLang}/wp-json/wp/v2/evidencia?per_page=100`
     );
   }
 
-  getServiceRedaction() {
+  getServiceRedaction(lang) {
+    let currentLang = lang == "en" ? "/en" : "";
     return this.http.get(
-      "http://admin.trydatatherapy.com/wp-json/wp/v2/redaccion?per_page=100"
+      `http://admin.trydatatherapy.com${currentLang}/wp-json/wp/v2/redaccion?per_page=100`
     );
   }
 
-  getServiceRevision() {
+  getServiceRevision(lang) {
+    let currentLang = lang == "en" ? "/en" : "";
     return this.http.get(
-      "http://admin.trydatatherapy.com/wp-json/wp/v2/revisiones?per_page=100"
+      `http://admin.trydatatherapy.com${currentLang}/wp-json/wp/v2/revisiones?per_page=100`
     );
   }
 
